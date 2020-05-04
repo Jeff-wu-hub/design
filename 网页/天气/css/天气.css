@@ -1,0 +1,14 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+
+#weather{
+	frameborder="0";
+	border: none;
+	scrolling="no";
+	hspace="0";
+	margin-top: 20%;
+	margin-left: 40%;
+}

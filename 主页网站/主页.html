@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>主页</title>
+	<link rel="stylesheet" href="css/主页.css" type="text/css">
+	<script src = "js/主页.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	
+</head>
+	
+
+<body>
+
+<div class = "input" id = "up">
+
+	<input id = "text" type="text" class = "search_input" placeholder="今天想搜索些什么？" onKeyDown="entersearch()" onMouseOut="over()">
+
+</div>
+<img src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/logo_white-c4d7df0a00.png"  class = "photo" id="baidu">
+<div class = "button" id = "btn">
+	<button onClick= "minsize()"><i class="fa fa-window-close" aria-hidden="true"></i></button>
+	<button onClick= "maxsize()"><i class="fa fa-window-maximize" aria-hidden="true"></i></button>
+	<button onClick= "down()"><i class="fa fa-window-minimize" aria-hidden="true"></i></button>
+
+</div>
+<div id = "html" class = "html" >
+	<iframe  class = "newweb" id = "web"></iframe>
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+/* CSS Document */
+*{
+	margin:0px;
+	padding:0px;
+}
+body{
+}
+.content{
+	position: absolute;
+	background: linear-gradient(30deg,#512e5f,#76448a);
+	padding: 0px 12px;
+	width: 260px;
+	height: 420px;	
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	box-sizing: border-box; 
+	box-shadow: 0px 0px 20px black;
+}
+header{
+	position:relative;
+	height:115px;
+	
+	
+}
+.com{
+	top:30px;
+	position: absolute;
+	right:0px;
+	font-size: 20px;
+	color:#909497;
+	overflow: hidden;
+}
+.result{
+	bottom:0;
+	position: absolute;
+	right:10px;
+	font-size:30px;
+	text-align: right;
+	color:white;
+	overflow: hidden;
+}
+header input{
+	border:none;
+	background: none;
+}
+.one{
+	position: absolute;
+	bottom:0;
+	height:1px;
+	width:100%;
+	background: linear-gradient(90deg,#5dade2,#48c9b0);
+}
+section ul{
+	list-style: none;
+}
+section ul li{
+	margin: 9px;
+	float:left;
+}
+section ul li button{
+	border:thick;
+	width:40px;
+	height:40px;
+	border-radius: 50%;
+	background: #bfc9ca;
+	font-size:20px;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	}
+.ans{
+	width:100px;
+	border-radius:20px;
+	text-align:center;
+}
+section ul li button:hover{
+	background:  linear-gradient(45deg,#45b39d,#2471a3);
+	
+	
+	
+}
+
