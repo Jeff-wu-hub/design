@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一次滚动一屏</title>
+    <style>
+        body,
+        html{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #main{
+            position: relative;
+        }
+        .page{
+            color: white;
+            width: 100%;
+            font-size: 10em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .page1 {
+            background-color: blue;
+        }
+        .page2 {
+            background-color: red;
+        }
+        .page3 {
+            background-color: black;
+        }
+        .page4 {
+            background-color: green;
+        }
+        .page5 {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="page1 page">1</div>
+        <div class="page2 page">2</div>
+        <div class="page3 page">3</div>
+        <div class="page4 page">4</div>
+        <div class="page5 page">5</div>
+    </div>
+    <script>
+        var boxHeight = document.body.clientHeight// 可视窗口高度
+        var main = document.body
+        var dom = document.getElementsByTagName('div')
+        for(var i = 0; i < dom.length; i ++){ // 设置每个页面高度
+            if(dom[i].className !== 'main'){
+                dom[i].style.height = boxHeight + 'px'
+            }
+        }
+        document.onclick = scrollPages
+      function scrollPages(event){
+          if(event.wheelDelta < 0){
+              console.log('向下')
+              
+          }else if (event.wheelDelta > 0){
+              console.log('向上')
+          }
+          main.style.top = '1000px'
+      }
+    </script>
+</body>
+</html>
