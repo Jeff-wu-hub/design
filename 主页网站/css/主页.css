@@ -34,7 +34,8 @@ body{
 }
 .input{
 	position:absolute;
-	
+	appearance: none;
+	outline: none;
 	top: 30%;
 	left:50%;
 	background-color:#AFEEEE;
@@ -47,6 +48,8 @@ body{
 }
 .search_input{
 	position:relative;
+	appearance: none;
+	outline: none;
 	margin-top: 15px;
 	margin-left: 10px;
 	width:370px;

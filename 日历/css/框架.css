@@ -9,9 +9,8 @@ body{
 #calendar{
 	background-color:#fff;
 	width:200px;
-	height:190px;
+	height: auto;
 	border-radius:10px;
-	overflow:hidden;
 	margin:100px auto;
 	text-align:center;
 }
