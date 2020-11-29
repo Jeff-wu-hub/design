@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            background-color: bisque;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav{
+            width: auto;
+            height: auto;
+           
+        }
+        .content{
+            list-style: none;
+            box-shadow: 10px 1px 100px black;
+        }   
+        .content li{
+            float: left;
+            width: 250px;
+            height: 50px;
+            text-align: center;
+            background-color: coral;
+            font-size: 25px;
+            line-height: 50px;
+        }
+        .content li:hover{
+            background-color: chartreuse;
+            transition: all 0.3s ease-in-out;
+        }
+        @keyframes animation {
+            0%{
+                background-color: coral;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <ul class="content">
+            <li>Home</li>
+            <li>page</li>
+            <li>About</li>
+            <li>Head</li>
+            <li>light</li>
+        </ul>
+    </nav>
+</body>
+</html>
