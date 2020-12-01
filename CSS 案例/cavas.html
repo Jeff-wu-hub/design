@@ -55,7 +55,7 @@
     <canvas id='hour' width="700" height="700" style="position: absolute;">浏览器不支持cavas</canvas>
     <canvas id='minute' width="700" height="700" style="position: absolute;">浏览器不支持cavas</canvas>
     <canvas id='seccend' width="700" height="700" style="position: absolute;">浏览器不支持cavas</canvas>
-    <div class='center' style="position: absolute;width: 100px;height: 100px;content: '';background-color: whitesmoke;border-radius: 50%;top: 50%;left: 50%;transform: translate(-50%,-50%);box-sizing: border-box;border: 15px solid lightgray;box-shadow: 0 0 10px rgb(156, 39, 39) inset;box-shadow: 0 0 15px black;"></div>
+    <div class='center' style="position: absolute;width: 100px;height: 100px;content: '';background-color: whitesmoke;border-radius: 50%;top: 50%;left: 50%;transform: translate(-50%,-50%);box-sizing: border-box;border: 15px solid lightgray;box-shadow: 0 0 20px rgb(36, 5, 5) inset;box-shadow: 0 0 15px black;"></div>
     </div>  
     <script>
         window.onload = function(){
@@ -66,12 +66,11 @@
             hour = date.getHours()
             minute = date.getMinutes()
             seccend = date.getSeconds()
-            console.log(hour,minute,seccend)
                 let _hour = hour
                 let _minute = minute
                 let _seccend = seccend
                 setInterval(()=>{
-                if(_seccend > 59.5){
+                if(_seccend > 59.511111111){
                     _seccend = 0
                     _minute++
                 }
