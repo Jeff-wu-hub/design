@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,html{
+            display: flex;
+            justify-content: center;
+            background-color: dimgrey;
+        }
+        
+        .out{
+            position: relative;
+            width: 700px;
+            height: 700px;
+            background-color: rgb(255, 253, 253);
+            border-radius: 50%;
+            box-sizing: border-box;
+            box-shadow: 0px 0px 30px black;
+        }
+        .out::after{
+            position: absolute;
+            content: '';
+            width: 650px;
+            height: 650px;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 0 0 10px black inset;
+            background-color: rgba(0, 110, 255, 0.288);
+        }
+        .center::after{
+            position: absolute;
+            content: '';
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: brown;
+            /* 另类居中  */
+            top:0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="out">
+    <canvas id='boxLong' width="700" height="700" style="position: absolute;">浏览器不支持cavas</canvas>
+    <canvas id='boxShort' width="700" height="700" style="position: absolute;">浏览器不支持cavas</canvas>
+    <canvas id='hour' width="700" height="700" style="position: absolute;">浏览器不支持cavas</canvas>
+    <canvas id='minute' width="700" height="700" style="position: absolute;">浏览器不支持cavas</canvas>
+    <canvas id='seccend' width="700" height="700" style="position: absolute;">浏览器不支持cavas</canvas>
+    <div class='center' style="position: absolute;width: 100px;height: 100px;content: '';background-color: whitesmoke;border-radius: 50%;top: 50%;left: 50%;transform: translate(-50%,-50%);box-sizing: border-box;border: 15px solid lightgray;box-shadow: 0 0 10px rgb(156, 39, 39) inset;box-shadow: 0 0 15px black;"></div>
+    </div>  
+    <script>
+        window.onload = function(){
+            drawLong() // 画时刻度
+            drawShort()// 画分刻度
+            let date = new Date()
+            let hour,minute,seccend
+            hour = date.getHours()
+            minute = date.getMinutes()
+            seccend = date.getSeconds()
+            console.log(hour,minute,seccend)
+                let _hour = hour
+                let _minute = minute
+                let _seccend = seccend
+                setInterval(()=>{
+                if(_seccend > 59.5){
+                    _seccend = 0
+                    _minute++
+                }
+                if(_minute > 60){ _hour ++}
+                drawSeccend(_seccend)
+                drawMin(_minute)
+                drawHour(_hour)
+                _seccend +=0.005
+                // 画秒刻度
+            },5)
+        }
+        // 画长刻度
+        function drawLong(){
+        const dom = document.getElementById('boxLong')
+        let _ = dom.getContext('2d')
+        for(let i=1;i<=12;i++){
+        _.save()
+        _.translate(350,350)
+        _.rotate(30*i*Math.PI/180)
+        _.beginPath()
+        _.lineWidth = 5
+        _.moveTo(0,-270)
+        _.lineTo(0,-320)
+        _.stroke()
+        _.closePath()
+        _.restore()
+        }
+    }
+    function drawShort(){
+
+        const dom = document.getElementById('boxShort')
+        let _ = dom.getContext('2d')
+        for(let i = 1; i<=60;i++){
+            _.save()
+            _.translate(350,350)
+            _.rotate(6*i*Math.PI/180)
+            _.beginPath()
+            _.moveTo(0,-290)
+            _.lineTo(0,-300)
+            _.stroke()
+            _.closePath()
+            _.restore()
+        }
+    }
+    const sec = document.getElementById('seccend')
+    const min = document.getElementById('minute')
+    const hour = document.getElementById('hour')
+    function drawSeccend(time){
+       let _ = sec.getContext('2d')
+       _.clearRect(0,0,700,700)
+       _.save()
+       _.lineCap = 'round'
+       _.globalCompositeOperation = 'Destination-atop '
+       _.translate(350,350)
+       _.rotate(time*6*Math.PI/180)
+       _.beginPath()
+       _.moveTo(0,-50)
+       _.lineTo(0,-300)
+       _.stroke()
+       _.closePath()
+       _.restore()
+    }
+    function drawMin(time){
+        let _ = min.getContext('2d')
+        _.clearRect(0,0,700,700)
+       _.save()
+       _.strokeStyle = '#32f23e'
+       _.globalCompositeOperation = 'Destination-atop '
+       _.lineCap = 'round'
+       _.translate(350,350)
+       _.rotate(time*6*Math.PI/180)
+       _.beginPath()
+       _.lineWidth = 10
+       _.moveTo(0,-50)
+       _.lineTo(0,-280)
+       _.stroke()
+       _.closePath()
+       _.restore()
+    }
+    function drawHour(time){
+        let _ = hour.getContext('2d')
+        _.clearRect(0,0,700,700)
+        _.save()
+        _.globalCompositeOperation = 'Destination-atop '
+        _.translate(350,350)
+        _.rotate(time*30*Math.PI/180)
+        _.lineCap = 'round'
+        _.beginPath()
+        _.lineWidth = 11
+        _.moveTo(0,-50)
+        _.lineTo(0,-200)
+        _.stroke()
+        _.restore()
+    }
+    </script>
+</body>
+</html>
