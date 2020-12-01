@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: gray;
+        }
+        .box{
+            display: flex;
+            width: 500px;
+            justify-content: space-around;
+            padding: 0;
+            list-style: none;
+        }
+        .cont{
+            position: relative;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            font-weight: 1000;
+            background-color: wheat;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .cont:hover::before{
+            bottom: -10px;
+            left: -10px;
+            z-index: 0;
+            
+        }
+        .cont:hover::after{
+            top: -10px;
+            right: -10px;
+            z-index: 0;
+        }
+        .cont::after{
+            border-radius: 5px;
+            z-index: -1;
+            position: absolute;
+            right: 0;
+            top: 0;
+            content: '';
+            width: 25px;
+            height: 25px;
+            border: 1px solid green;
+            border-width: 5px 5px 0 0 ;
+            transition: all 0.3s ease-in-out;
+        }
+        .cont::before{
+            z-index: -1;
+            position: absolute;
+            content: '';
+            width: 25px;
+            height: 25px;
+            border: 1px solid green;
+            bottom: 0;
+            border-width: 0 0 5px 5px ;
+            left: 0;
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <ul class="box">
+        <li class="cont">Home</li>
+        <li class="cont">video</li>
+        <li class="cont">list</li>
+        <li class="cont">Photo</li>
+    </ul>
+</body>
+</html>
