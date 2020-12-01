@@ -13,6 +13,7 @@
             justify-content: center;
             align-items: center;
             background-color: rgb(37, 36, 36);
+            z-index: -1;
         }
         .box{
             position: relative;
@@ -21,8 +22,8 @@
             justify-content: center;
             width: 300px;
             height: 500px;
-            color: black;
-            background-color: rgb(37, 36, 36);
+            color: rgba(255, 255, 255, 0.658);
+            background-color:rgb(37, 36, 36);
         }
         .box::before,
         .box::after{
@@ -32,11 +33,11 @@
             top: -2px;
             right: -2px;
             bottom: -2px;
-            background-color: white;
+            background-image: linear-gradient(to top right,rgb(84, 158, 24),rgba(84, 158, 24, 0.692),rgba(84, 158, 24, 0.055),transparent,transparent,rgba(20, 86, 173, 0.534),rgba(20, 86, 173, 0.568),rgb(20, 86, 173));
             z-index: -1;
         }
         .box::after{
-            filter: blur(20px);
+            filter: blur(30px);
         }
     </style>
 </head>
