@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            animation: animation 1s linear infinite;
+        }
+        .box::after,
+        .box::before{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            content: '';
+            border-radius: 50%;
+            box-shadow: 0px 0px 15px white;
+        }
+        .box::after{
+            top: 0;
+            left: 0;
+            background-color: #89ff00;
+        }
+        .box::before{
+            background-color: #512e5f;
+            bottom:0;
+            right: 0;
+        }
+        @keyframes animation {
+            0%{
+                transform: rotate(0);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
