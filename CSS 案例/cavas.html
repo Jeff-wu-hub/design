@@ -74,14 +74,13 @@
                     _seccend = 0
                     _minute++
                 }
-                debugger;
                 if(_minute > 60){ _hour +=1}
                 drawSeccend(_seccend)
                 drawMin(_minute)
                 drawHour(_hour)
                 _seccend +=0.005
                 // 画秒刻度
-            },5)
+            },1)
             let a = document.getElementById('video')
         }
         // 画长刻度
