@@ -40,7 +40,9 @@
             position: absolute;
             width: 50px;
             height: 50px;
-            background-color: coral;
+            border: 2px solid rgb(44, 32, 32);
+            box-sizing: border-box;
+            
             border-radius: 50%;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.589);
         }
@@ -58,13 +60,10 @@
             transition: all 0.3s ease-in-out;
         }
         .input:checked+.span::after{
-            background-color: yellow;
-            box-shadow: 0 0 15px black;
-            box-shadow: 0 0 10px black inset;
+            background-color: rgba(6, 60, 94, 0.486);
             opacity: 1;
         }
         .input:checked+.span{
-            background-color: green;
             box-shadow: 0 0 15px white;
         }
     </style>
@@ -72,7 +71,7 @@
 <body>
     <form action="" class="form">
            <div class="box">
-               <input type="radio" name='#' class="input">
+               <input type="radio" checked name='#' class="input">
                <div class="span"></div>
            </div>
            <div class="box">
