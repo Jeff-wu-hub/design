@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body{
+            width:100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: gray;
+        }
+        .box{
+            overflow: hidden;
+            position: relative;
+            border: 1px solid black;
+            transition: all 0.3s ease-in-out;
+        }
+        .btn{
+            appearance: none;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+            font-weight: 1000;
+            cursor: pointer;
+        }
+        .box:hover{
+            border: rgba(255, 255, 255, 0);
+            background-image: linear-gradient(to left,darkgreen,blueviolet,darkblue, #9acd32,darkgreen);
+            box-shadow: 0 0 15px white;
+            background-size: 500%;
+            border-radius: 20px;
+            animation: ani 7s linear 0s infinite;
+        }
+        @keyframes ani {
+            0%{
+                background-position: 0px 0px;
+            }
+            100%{
+                background-position: -100% 0;
+            }
+        }
+        .light{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0);
+            transition: transform 1s ease-in-out;
+            border-radius: 50%;
+        }
+        @keyframes animation {
+            0%{
+                background-color: rgba(255, 255, 255, 0.6);
+            }
+            100%{
+                background-color: rgba(255, 255, 255, 0);
+            }
+        }
+        .animation{
+            animation: animation 1s ease-in-out 1;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <button class="btn" id="btn">Button</button>
+    <span class="light" id="light"></span>
+</div>
+<script>
+    const btn = document.getElementById('btn')
+    const span = document.getElementById('light')
+    btn.addEventListener('click',function (e) {
+        let y = e.offsetY
+        let x = e.offsetX
+        span.style.top = y + 'px'
+        span.style.left = x + 'px'
+        span.style.transform = 'scale(200)'
+        span.classList.add('animation')
+        setTimeout(()=>{
+            span.style.transform = 'scale(0)'
+            span.classList.remove('animation')
+        },800)
+    })
+</script>
+</body>
+</html>
