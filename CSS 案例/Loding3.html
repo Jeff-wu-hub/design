@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: animation 1s linear 0s infinite none;
+        }
+        .content{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: beige;
+            border-radius: 50%;
+            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.342);
+        }
+        .content:nth-child(1){
+            transform: rotate(-30deg) translateY(-100px);
+            background-color: rgb(105, 204, 13);
+        }
+        .content:nth-child(2){
+            transform: rotate(-70deg) translateY(-100px)  scale(0.9);
+            background-color: rgba(133, 175, 16, 0.781);
+        }
+        .content:nth-child(3){
+            transform: rotate(-110deg) translateY(-100px)  scale(0.8);
+            background-color: rgba(17, 212, 196, 0.63);
+        }
+        .content:nth-child(4){
+            transform: rotate(-150deg) translateY(-100px)  scale(0.7);
+            background-color: rgba(14, 55, 167, 0.418);
+        }
+        .content:nth-child(5){
+            transform: rotate(-190deg) translateY(-100px)  scale(0.6);
+            background-color: rgba(104, 8, 182, 0.233);
+        }
+        .content:nth-child(6){
+            transform: rotate(-230deg) translateY(-100px) scale(0.5);
+            background-color: rgba(148, 10, 79, 0.116);
+        }
+@keyframes animation {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+    </div>
+</body>
+</html>
