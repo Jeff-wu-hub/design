@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px black;
+        }
+        .content{
+            overflow: hidden;
+            position: relative;
+            width: 450px;
+            height: 450px;
+            background-color: rgb(105, 53, 18);
+            border-radius: 50%;
+            box-sizing: border-box;
+            border: 20px solid rgb(175, 121, 6);
+            margin: 0;
+            padding: 0;
+        }
+        .line{
+            animation: animation 10s linear 0s infinite;
+            transform-origin: center;
+            position: absolute;
+            top: -200px;
+            left: -45px;
+            width: 500px;
+            height: 500px;
+            background-color: rgb(202, 140, 7);
+            border-radius: 30%;
+            box-shadow: 2px 2px 15px white inset;
+        }
+        .line::after{
+            position: absolute;
+            content: '';
+            width: 500px;
+            height: 500px;
+            border-radius: 40%;
+            background-color: rgb(202, 140, 7);
+        }
+        @keyframes animation {
+            0%{
+                transform: rotate(60deg) scale(1.8);
+                top: -300px;
+            }
+            100%{
+                transform: rotate(420deg) scale(1.8);
+                top: -650px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="content">
+            <div class="line"></div>
+        </div>
+    </div>
+</body>
+</html>

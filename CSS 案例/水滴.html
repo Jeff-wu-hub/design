@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            filter: contrast(100);
+            overflow: hidden;
+        }
+        .drop{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border-radius: 50%;
+            filter: blur(20px);
+        }
+        .drop:nth-child(1){
+            animation: animation 3s ease-in-out 0.55s infinite;
+        }
+        .drop:nth-child(2){
+            animation: animation 4s ease-in-out 0s infinite;
+            /* animation: move 3s linear 1.5s infinite reverse; */
+            /* transform: translateX(30px) translateY(-5px); */
+        }
+        .drop:nth-child(3){
+            transform: scale(2);
+        }
+        @keyframes animation {
+            0%{
+                transform: scale(2) translateY(-350px);
+            }
+            100%{
+                transform: scale(0) translateY(-0px);
+            }
+        }
+        /* @keyframes move {
+            0%{
+                transform: scale(2);
+                transform: translateX(0px) translateY(0px);
+            }
+            25%{
+                transform: scale(2);
+                transform: translateX(15px) translateY(-5px);
+            }
+            30%{
+                transform: scale(2);
+                transform: translateX(20px) translateY(-5px);
+            }
+            45%{
+                transform: scale(2);
+                transform: translateX(35px) translateY(-5px);
+            }
+            75%{
+                transform: scale(2);
+                transform: translateX(-30px) translateY(10px);
+            }
+            85%{
+                transform: scale(2);
+                transform: translateX(-20px) translateY(10px);
+            }
+            95%{
+                transform: scale(2);
+                transform: translateX(-10px) translateY(10px);
+            }
+            100%{
+                transform: scale(2);
+                transform: translateX(-5px) translateY(5px);
+            }
+        } */
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="drop"></div>
+        <div class="drop"></div>
+        <div class="drop"></div>
+    </div>
+</body>
+</html>
