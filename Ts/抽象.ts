@@ -9,3 +9,6 @@ class B extends A{
 }
 const b = new B()
 console.log(b.func())
+
+/*、
+* 只能作为继承的基类，里面内容必须实现*/

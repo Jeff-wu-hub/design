@@ -10,3 +10,5 @@ function func(arg:any):any {
 
 }
 func(12)
+/*
+* 定义一个函数可以有不同种算法模式*/
