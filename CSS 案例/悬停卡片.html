@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          *{
+            padding: 0;
+            margin: 0;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: gray;
+            perspective: 2000px;
+            transform-style: preserve-3d;
+            user-select: none;
+        }
+        .content{
+            border-radius: 30px;
+            width: 500px;
+            height: 300px;
+            perspective: 10000px;
+            transform-style: preserve-3d;
+        }
+        .eat{
+            overflow: hidden;
+            border-radius: 30px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            background-color: white;
+            transition: all 0.5s ease-in-out;
+        }
+        .eat:nth-of-type(1){
+            transform: rotateX(10deg) rotateZ(15deg) translateZ(60px) ;
+        }
+        .eat:nth-of-type(2){
+            transform: rotateX(10deg) rotateZ(-45deg) translateX(50px) translateY(30px)translateZ(50px)  ;
+        }
+        .eat:nth-of-type(3){
+            transform: rotateX(10deg) rotateZ(3deg) translateX(100px) translateY(100px) translateZ(50px) ;
+        }
+        .eat:nth-of-type(1):hover{
+            transform: translateZ(200px);
+        }
+        .eat:nth-of-type(2):hover{
+            transform: translateZ(200px);
+        }
+        .eat:nth-of-type(3):hover{
+            transform: translateZ(200px);
+        }
+        .img{
+            width: 150%;
+            height: 80%;
+            margin-top: -20%;
+            margin-left: -20%;
+            transform: rotateZ(15deg);
+        }
+        .description{
+            position: absolute;
+            bottom: 10%;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .left{
+            flex: 3;
+            width: 50%;
+            margin-left: 8%;
+        }
+        .left h1{
+           font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .left p{
+            margin-top: 10%;
+        }
+        .charge{
+            margin-top: 10%;
+            font-size: 20px;
+            text-align: center;
+            color: hotpink;
+        }
+        .right{
+            flex: 2;
+            float: right;
+            margin-right: 10%;
+        }
+        .startList{
+            margin-top: 15%;
+            width: 100%;
+            height: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .startList span{
+            margin-top: -7%;
+            font-size: 30px;
+        }
+        .starColor{
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- 外框 -->
+    <div class="content">
+        <!-- 卡片 -->
+        <div class="eat">
+            <!-- 图片 -->
+            <img src="./img/果汁.jpg" alt="果汁" class="img">
+            <!-- 描述 -->
+            <div class="description">
+                <!-- 左侧表述 -->
+                <div class="left">
+                    <h1>果汁</h1>
+                    <p>Fresh&Great</p>
+                </div>
+                <!-- 右侧 -->
+                <div class="right">
+                    <p class='charge'>$  10.12</p>
+                    <p class='startList'>
+                        <span class = 'starColor'>&#9733</span>
+                        <span class = 'starColor'>&#9733</span>
+                        <span class = 'starColor'>&#9733</span>
+                        <span>&#9733</span>
+                        <span>&#9733</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="eat">
+            <!-- 图片 -->
+            <img src="./img/披萨.jpg" alt="披萨" class="img">
+            <!-- 描述 -->
+            <div class="description">
+                <!-- 左侧表述 -->
+                <div class="left">
+                    <h1>披萨</h1>
+                    <p>Great</p>
+                </div>
+                <!-- 右侧 -->
+                <div class="right">
+                    <p class='charge'>$  12.58</p>
+                    <p class='startList'>
+                        <span class = 'starColor'>&#9733</span>
+                        <span >&#9733</span>
+                        <span >&#9733</span>
+                        <span>&#9733</span>
+                        <span>&#9733</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="eat">
+            <!-- 图片 -->
+            <img src="./img/汉堡.jpg" alt="汉堡" class="img">
+            <!-- 描述 -->
+            <div class="description">
+                <!-- 左侧表述 -->
+                <div class="left">
+                    <h1>汉堡</h1>
+                    <p>Fresh</p>
+                </div>
+                <!-- 右侧 -->
+                <div class="right">
+                    <p class='charge'>$  20.72</p>
+                    <p class='startList'>
+                        <span class = 'starColor'>&#9733</span>
+                        <span class = 'starColor'>&#9733</span>
+                        <span class = 'starColor'>&#9733</span>
+                        <span  class = 'starColor'>&#9733</span>
+                        <span>&#9733</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
