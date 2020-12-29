@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Document</title>
+	</head>
+	<style>
+		bodt,html{
+			width: 100%;
+			height: 100%;
+			background-color: gray;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		:root{
+			--one:#565264;
+			--two:#706677;
+			--three:#a6808c;
+			--four:#ccb7ae;
+		}
+		.main{
+			height: 40rem;
+			width: 35rem;
+		}
+		.circle{
+			position: absolute;
+			width: 35rem;
+			height: 35rem;
+			border-radius: 50%;
+			background-color: gray;
+			transform: translateY(-200px);
+			display: flex;
+			justify-content: start;
+			align-items:center;
+			transform-origin: center;
+			animation: animation 3s  0s ease-in-out infinite none;
+			
+		}
+		.circle div{
+			width: 70px;
+			height: 70px;
+			background-color: #ff11ee;
+			box-shadow: 0 0 20px white inset;
+			border-radius: 50%;
+		}
+		.line{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-end;
+		}
+		.one{
+			display: block;
+			height: 50%;
+			width: 1rem;
+			background-color: var(--one);
+			border-radius: 10px 10px 0 0;
+		}
+		.two{
+			display: block;
+			height: 50%;
+			width: 1rem;
+			background-color: var(--two);
+			border-radius: 10px 10px 0 0;
+		}
+		.three{
+			display: block;
+			height: 50%;
+			width: 1rem;
+			background-color: var(--three);
+			border-radius: 10px 10px 0 0;
+		}
+		.four{
+			display: block;
+			height: 50%;
+			width: 1rem;
+			background-color: var(--four);
+			border-radius: 10px 10px 0 0;
+		}
+		@keyframes animation{
+			0%{
+				transform: rotate(-10deg);
+			}
+			50%{transform: rotate(-170deg);}
+			100%{
+				transform: rotate(-10deg);
+			}
+		}
+	</style>
+	<body>
+		 <div class="main">
+			 <div class="circle">
+				 <div></div>
+			 </div>
+			 <div class="line">
+				 <span class="one"></span>
+				 <span class="two"></span>
+				 <span class="three"></span>
+				 <span class="four"></span>
+				 <span class="three"></span>
+				 <span class="two"></span>
+				 <span class="one"></span>
+				 <span class="one"></span>
+				 <span class="two"></span>
+				 <span class="three"></span>
+				 <span class="four"></span>
+				 <span class="three"></span>
+				 <span class="two"></span>
+				 <span class="one"></span>
+			 </div>
+		 </div>
+	</body>
+</html>

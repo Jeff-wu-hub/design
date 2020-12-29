@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body,html{
+        background-color: pink;
+        width:100%;
+        height:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+	:root{
+		--main: #F5DEB3;
+		--shadow:#c2b200;
+	}
+    .content{
+        width: 200px;
+        height:200px;
+		background-color: var(--main);
+		text-align: center;
+		line-height: 200px;
+		font-size: 20px;
+		font-family: "maiandra gd";
+		font-weight: 1000;
+		border-radius: 10px;
+		box-shadow: 25px 25px 0px var(--shadow);
+		animation: animation 5s ease-in-out 0s infinite none;
+    }
+    .mid{
+		margin-top: 40px;
+		width: 100px;
+		height: 10px;
+		background-color: var(--main);
+		border-radius: 10px;
+		box-shadow: 15px 15px 0px var(--shadow);
+		animation: animation 5s ease-in-out 0.5s infinite none;
+		
+    }
+    .small{
+		margin-top: 20px;
+		width: 10px;
+		height: 10px;
+		border-radius: 10px;
+		background-color: var(--main);
+		box-shadow: 10px 10px 0px var(--shadow);
+		animation: animation 5s ease-in-out 1s infinite none;
+		
+    }
+	@keyframes animation{
+		0%{
+			transform: translateY(0);
+		}
+		50%{
+			transform: translateY(-10px);
+		}
+		100%{
+			transform: translateY(0);
+		}
+	}
+</style>
+<body>
+    <div class="content">
+		<span>Hello world!</span>
+        <div class="mid" ></div>
+        <div class="small" ></div> 
+    </div>
+</body>
+</html>
