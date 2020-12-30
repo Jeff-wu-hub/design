@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(156, 156, 53, 0.616);
+            position: relative;
+            user-select: none;
+        }
+        .buddle{
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.87);
+            left: calc(80px * var(--i));
+            top: calc(300px * var(--i));
+            bottom: -10%;
+        }
+        .buddle:nth-of-type(3n+1){
+            width: 25px;
+            height: 25px;
+            left: calc(30px * var(--i));
+            top: calc(300px * var(--i));
+            animation: fly 6s linear 0.5s infinite normal none;
+        }
+        .buddle:nth-of-type(3n+2){
+            width: 15px;
+            height: 15px;
+            left: calc(80px * var(--i));
+            top: calc(300px * var(--i));
+            animation: fly 4s linear 0.8s infinite normal none;
+        }
+        .buddle:nth-of-type(3n+3){
+            width: 60px;
+            height: 60px;
+            left: calc(150px * var(--i));
+            top: calc(300px * var(--i));
+            animation: fly 7s linear 1s infinite normal none;
+        }
+        .buddle:nth-of-type(3n+4){
+            width: 45px;
+            height: 45px;
+            left:calc(200px * var(--i));
+            top: calc(300px * var(--i));
+            animation: fly 4s linear 1.1s infinite normal none;
+        }
+        @keyframes fly {
+            0%{
+                
+            }
+            25%{
+                transform: translateX(100%) translateY(-1000%);
+            }
+            50%{
+                transform: translateX(-200%) translateY(-2000%);
+            }
+            75%{
+                transform: translateX(-100%) translateY(-3000%);
+            }
+            85%{
+                transform: translateX(50%) translateY(-3000%);
+            }
+            100%{
+                transform: translateY(-4000%);
+                opacity: 0;
+            }        
+        }
+    </style>
+</head>
+<body>
+    <div class="buddle" style="--i:1"></div>
+    <div class="buddle" style="--i:2"></div>
+    <div class="buddle" style="--i:3"></div>
+    <div class="buddle" style="--i:4"></div>
+    <div class="buddle" style="--i:5"></div>
+    <div class="buddle" style="--i:6"></div>
+    <div class="buddle" style="--i:7"></div>
+    <div class="buddle" style="--i:8"></div>
+    <div class="buddle" style="--i:9"></div>
+    <div class="buddle" style="--i:10"></div>
+    <div class="buddle" style="--i:11"></div>
+    <div class="buddle" style="--i:12"></div>
+    <div class="buddle" style="--i:13"></div>
+    <div class="buddle" style="--i:14"></div>
+</body>
+</html>
