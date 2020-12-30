@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: -1000;
+            border-radius: 50%;
+            user-select: none;
+        }
+        .box{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            perspective: 2000px;
+            transform-style: preserve-3d;
+        }
+        .border{
+            position: absolute;
+            z-index: 1;
+            content: '';
+            width: 120%;
+            height:120%;
+            box-sizing: border-box;
+            border-radius: 50%;
+            border: 30px solid  rgba(255, 255, 255, 0.3);
+            top: -10%;
+            left: -10%;
+            transition: all 0.5s ease-in-out;
+        }
+        .img{
+            transition: all ease-in-out 0.5s;
+            z-index: -1;
+            border-radius: 50%;
+            overflow: hidden;
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            left: -10%;
+            top: -10%;
+        }
+        .img img{
+            width: 100%;
+            height: 100%;
+        }
+        h1{
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+            text-align: center;
+            width: 100%;
+            margin-top: 45%;
+            transform: translateZ(-100px);
+        }
+        .box:hover>h1{
+            opacity: 1;
+            color: white;
+            transform: translateZ(300px);
+        }
+        .box:hover>.img{
+            filter: grayscale(40%);
+        }
+        .box:hover>.border{
+            border: 30px solid  rgba(255, 255, 255, 0.0);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="img">
+            <img src="./img/card2.jpg" alt="">
+        </div>
+        <div class="border"></div>
+        <h1>Hello world</h1>
+    </div>
+</body>
+</html>
