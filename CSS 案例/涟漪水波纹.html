@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box span{
+            background-color: steelblue;
+            position: absolute;
+            border-radius: 50%;
+            animation: animation 3s linear infinite none;
+            animation-delay: calc(0.5s * var(--i));
+        }
+        @keyframes animation {
+            0%{
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+            50%{
+                opacity: 1;
+            }
+            100%{
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+        <span style="--i:4"></span>
+        <span style="--i:5"></span>
+        <span style="--i:6"></span>
+        <span style="--i:7"></span>
+    </div>
+</body>
+</html>
