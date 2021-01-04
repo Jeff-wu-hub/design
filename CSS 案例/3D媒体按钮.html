@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: gray;
+            user-select: none;
+            z-index: -1000;
+        }
+        .box{
+            z-index: -100;
+            width: 200px;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+        }
+        .imgBox{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            background-color: tomato;
+            box-shadow: 0  5px 0 rgb(53, 52, 52);
+            border-radius: 10px 0 0 10px;
+            border-right: 0.1px solid black;
+            overflow: hidden;
+        }
+        .img{
+            width: 50px;
+            height: 50px;
+            border-left: 2px solid rgb(53, 52, 52);
+        }
+        .contentBox{
+            position: relative;
+            flex: 3;
+            z-index: -10;
+            text-align: center;
+            background-color: gray;
+            font-size: large;
+            line-height: 50px;
+            box-shadow: 0  5px 0 rgb(53, 52, 52);
+        }
+        .content{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: tomato;
+            color: white;
+            border-left: 1px solid black;
+            box-sizing: border-box;
+        }
+        .checked:checked + .content{
+            background-color: tomato;
+            box-shadow:2.5px 0px 5px black inset;
+            top: 3px;
+        }
+        .checked{
+            position: absolute;
+            left: 0;
+            z-index: 10;
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+            appearance: none;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="imgBox">
+            <img src="./img/weibo.png" alt="" class="img">
+        </div>
+        <div class="contentBox">
+            <input type="checkbox" class="checked"><div class="content">微博</div></input>
+        </div>
+    </div>
+</body>
+</html>

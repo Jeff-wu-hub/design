@@ -21,9 +21,49 @@
             border-radius: 50%;
             user-select: none;
         }
+        .loading{
+            border-radius: 20px;
+            position: relative;
+            width: 20px;
+            height: 20px;
+            animation: animation 2s linear 0s infinite reverse none;
+        }
+        .loading::after,
+        .loading::before{
+            border-radius: 35px;
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+        }
+        .loading::after{
+            box-shadow: 35px 35px #04e0f0, -35px -35px #0d1bd6;
+        }
+        .loading::before{
+            box-shadow: 35px 35px #cbf11e, -35px -35px #da2121;
+            transform: rotate(90deg);
+        }
+        @keyframes animation {
+            25%{
+                transform: rotate(-90deg);
+                width: 25px;
+            }
+            50%{
+                transform: rotate(-180deg);
+                width: 100px;
+            }
+            75%{
+                transform: rotate(-270deg);
+                width: 100px;
+            }
+            100%{
+                transform: rotate(-360deg);
+                width: 25px;
+            }
+        }
     </style>
 </head>
 <body>
-    
+    <div class="loading"></div>
 </body>
 </html>

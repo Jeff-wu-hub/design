@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: gray;
+            z-index: -1000;
+        }
+        .box{
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+        .box:hover>.loader{
+            animation: none;
+            border: 5px solid greenyellow;
+        }
+        .box:hover>.confirm{
+            display: block;
+            animation: confirm 1s linear 1 ;
+        }
+        .loader{
+            box-sizing: border-box;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transform: rotateZ(90deg);
+            border: 5px solid #34495e;
+            border-left-color: greenyellow;
+            transition: all linear 0.3s;
+            animation: rotate 1s linear 0s infinite ;
+        }
+        .confirm{
+            display: none;
+            position: absolute;
+            border: 3px solid green;
+            border-left-width: 0;
+            border-bottom-width: 0;
+            top: 55%;
+            left: 33%;
+            width: 15px;
+            height: 35px;
+            transform-origin: left top;
+            transform: scaleX(-1) rotate(135deg);
+            
+        }
+        @keyframes confirm {
+            0%{
+                width: 0px;
+                height: 0px;
+            }
+            33%{
+                width: 15px;
+                height: 0px;
+            }
+           
+            100%{
+                width: 15px;
+                height: 35px;
+            }
+        }
+        @keyframes rotate {
+            0%{
+                transform: rotateZ(0deg);
+                box-shadow: 0 0 10px white;
+                border-left-color: rgb(23, 247, 23);
+            }
+            25%{
+                transform: rotateZ(90deg);
+                border-left-color: rgb(97, 13, 233);
+            }
+            50%{
+                transform: rotateZ(180deg);
+                border-left-color: rgb(148, 235, 19);
+            }
+            75%{
+                transform: rotateZ(270deg);
+                border-left-color: rgb(23, 200, 212);
+            }
+            100%{
+                transform: rotateZ(360deg);
+                border-left-color: rgb(185, 240, 102);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="loader"></div>
+        <div class="confirm"></div>
+    </div>
+</body>
+</html>
