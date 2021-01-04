@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         html,body{
+            width:100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: gray;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            overflow: hidden;
+            position: relative;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .item{
+            position: absolute;
+            box-shadow: 0 0 20px rgba(12, 12, 12, 0.404)
+        }
+        .item:nth-of-type(1){
+            background-color: rgba(223, 22, 22, 0.26);
+            width: 80%;
+            height: 80%;
+            animation: animation 5s ease-in-out 1.4s infinite normal none;
+        }
+        .item:nth-of-type(2){
+            background-color: rgba(223, 22, 22, 0.56);
+            width: 70%;
+            height:70%;
+            animation: animation 5s ease-in-out 1.3s infinite normal none;
+        }
+        .item:nth-of-type(3){
+            background-color: rgba(223, 22, 22, 0.66);
+            width: 60%;;
+            height: 60%;
+            animation: animation 5s ease-in-out 1s infinite normal none;
+        }
+        .item:nth-of-type(4){
+            background-color: rgba(255, 255, 255,0.46);
+            width:40%;
+            height: 40%;
+            animation: animation 5s ease-in-out 0.8s infinite normal none;
+        }
+        .item:nth-of-type(5){
+            background-color: rgba(255, 255, 255,0.66);
+            width: 30%;
+            height: 30%;
+            animation: animation 5s ease-in-out 0.5s infinite normal none;
+        }
+        .item:nth-of-type(6){
+            background-color: rgba(255, 255, 255,0.86);
+            width: 15%;
+            height: 15%;
+            animation: animation 5s ease-in-out 0.3s infinite normal none;
+        }
+        .item:nth-of-type(7){
+            background-color: rgba(255, 255, 255,1);
+            width: 5%;
+            height: 5%;
+            animation: animation 5s ease-in-out 0s infinite normal none;
+        }
+        @keyframes animation {
+            0%{
+                border-radius: 0%;
+                transform: rotate(0deg);
+            }
+            50%{
+                border-radius: 50%;
+                transform: rotate(180deg);
+            }
+            100%{
+                border-radius: 0%;
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>
