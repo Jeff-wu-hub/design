@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: gray;
+        }
+        .loading{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .item1{
+            position: absolute;
+            border-radius: 50%;
+            box-sizing: border-box;
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            animation: animation 2.5s linear 0s infinite normal none;
+        }
+        .item2{
+            position: absolute;
+            border-radius: 50%;
+            box-sizing: border-box;
+            width: 60%;
+            height: 60%;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            animation: animation 2s linear 0.5s infinite normal none;
+        }
+        .item3{
+            position: absolute;
+            border-radius: 50%;
+            box-sizing: border-box;
+            width: 40%;
+            height: 40%;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            animation: animation 1s linear 0s infinite normal none;
+            border-left-color: green;
+        }
+        @keyframes animation {
+            0%{
+                border-left-color: green;
+                transform: rotateZ(0deg);
+            }
+            25%{
+                border-left-color: violet;
+                transform: rotateZ(90deg);
+            }
+            50%{
+                border-left-color: rgb(113, 9, 250);
+                transform: rotateZ(180deg);
+            }
+            75%{
+                border-left-color: rgb(9, 240, 151);
+                transform: rotateZ(270deg);
+            }
+            100%{
+                border-left-color: green;
+                transform: rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <div class="item1"></div>
+        <div class="item2"></div>
+        <div class="item3"></div>
+    </div>
+</body>
+</html>
