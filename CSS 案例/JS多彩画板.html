@@ -48,7 +48,10 @@
         })
         let dom = document.getElementById('container')
         change = function(e){
-            if(click){e.target.style.backgroundColor = 'red'}
+            let arr = ['red','blue','white','green']
+            let temp = arr.pop()
+            if(click){e.target.style.backgroundColor = temp;arr.shift(temp)}
+            
         }
         for(let index = 1;index<10001;index++){
             let newDom = document.createElement('div')
