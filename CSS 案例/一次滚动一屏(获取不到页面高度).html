@@ -3,69 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <title>一次滚动一屏</title>
-    <style>
-        body,
-        html{
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
+    <style type="text/css">
+        html,body{
+            height:100%;
+        }
+        body,ul,li,a,p,div{padding:0px; margin:0px; font-size:14px;}
+        #wrap{
+            overflow: hidden;
+            width:50%;
         }
         #main{
+            height:2944px;
+            top:0;
             position: relative;
+            transition: all ease-in-out 0.5s;
         }
         .page{
-            color: white;
-            width: 100%;
-            font-size: 10em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width:100%;
+            margin:0;
+            text-align: center;
+            line-height: 1000%;
+            font-size: 100px;
         }
-        .page1 {
-            background-color: blue;
+        #page1{
+            background:#E4E6CE;
         }
-        .page2 {
-            background-color: red;
+        #page2{
+            background:#6CE26C;
         }
-        .page3 {
-            background-color: black;
+        #page3{
+            background:#BF4938;
         }
-        .page4 {
-            background-color: green;
+        #page4{
+            background:#2932E1;
         }
-        .page5 {
-            background-color: yellowgreen;
-        }
-    </style>
+        </style>
 </head>
 <body>
-    <div id="main">
-        <div class="page1 page">1</div>
-        <div class="page2 page">2</div>
-        <div class="page3 page">3</div>
-        <div class="page4 page">4</div>
-        <div class="page5 page">5</div>
+    <div id="wrap">
+        <div id="main"> 
+            <div id="page1" class="page">1</div>
+            <div id="page2" class="page">2</div>
+            <div id="page3" class="page">3</div>
+            <div id="page4" class="page">4</div>
+        </div>
     </div>
     <script>
-        var boxHeight = document.body.clientHeight// 可视窗口高度
-        var main = document.body
-        var dom = document.getElementsByTagName('div')
-        for(var i = 0; i < dom.length; i ++){ // 设置每个页面高度
-            if(dom[i].className !== 'main'){
-                dom[i].style.height = boxHeight + 'px'
+            var wrap = document.getElementById("wrap");
+            var main = document.getElementById("main");
+            var hei = document.body.clientHeight;
+            wrap.style.height = hei + "px";
+            var obj = document.getElementsByTagName("div");
+            for(var i=0;i<obj.length;i++){
+                if(obj[i].className == 'page'){
+                    obj[i].style.height = hei + "px";
+                }
             }
-        }
-        document.onclick = scrollPages
-      function scrollPages(event){
-          if(event.wheelDelta < 0){
-              console.log('向下')
-              
-          }else if (event.wheelDelta > 0){
-              console.log('向上')
-          }
-          main.style.top = '1000px'
-      }
+            //如果不加时间控制，滚动会过度灵敏，一次翻好几屏
+            var startTime = 0, //翻屏起始时间  
+                endTime = 0,  
+                now = 0;     
+            //浏览器兼容      
+            if ((navigator.userAgent.toLowerCase().indexOf("firefox")!=-1)){   
+                document.addEventListener("DOMMouseScroll",scrollFun,false);        
+            }  
+            else if (document.addEventListener) {  
+                document.addEventListener("mousewheel",scrollFun,false);  
+            }  
+            else if (document.attachEvent) {  
+                document.attachEvent("onmousewheel",scrollFun);   
+            }  
+            else{  
+                document.onmousewheel = scrollFun;  
+            }  
+            
+            //滚动事件处理函数
+            function scrollFun(event){
+                startTime = new Date().getTime();  
+                var delta = event.detail || (-event.wheelDelta);  
+                //mousewheel事件中的 “event.wheelDelta” 属性值：返回的如果是正值说明滚轮是向上滚动
+                //DOMMouseScroll事件中的 “event.detail” 属性值：返回的如果是负值说明滚轮是向上滚动
+                if ((endTime - startTime) < -1000){
+                    if(delta>0 && parseInt(main.offsetTop) > -(hei*3)){
+                        //页面向上翻页
+                        now = now - hei;
+                        toPage(now);
+                } 
+                    if(delta<0 && parseInt(main.offsetTop) < 0){
+                        //页面向下翻页
+                            now = now + hei;
+                            toPage(now);
+                    }
+                    endTime = new Date().getTime();  
+                }
+                else{  
+                        event.preventDefault();    
+                    }    
+            }
+            function toPage(now){        
+                setTimeout("main.style.top = now + 'px'",1000);    // javascript 实现动画效果
+            }   
     </script>
 </body>
 </html>
