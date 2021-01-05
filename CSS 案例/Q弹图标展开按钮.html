@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: -1000;
+            user-select: none;
+        }
+        .container{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .button{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s ease-in-out;
+            transform: rotate(0deg);
+            cursor: pointer;
+        }
+        .button::after{
+            cursor: pointer;
+            position: absolute;
+            border-radius: 10px;
+            content: '';
+            width: 50px;
+            height: 10px;
+            background-color: black;
+            transform: rotate(0deg);
+        }
+        .button::before{
+            cursor: pointer;
+            position: absolute;
+            border-radius: 10px;
+            content: '';
+            width: 50px;
+            height: 10px;
+            background-color: black;
+            transform: rotate(90deg);
+        }
+        .itemBox{
+            position: absolute;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 300px;
+            height: 80px;
+            background-color: blanchedalmond;
+            top: 40px;
+            border-radius: 20px;
+            opacity: 0;
+            transition: all ease-in-out 0.5s;
+        }
+        .itemBox::before{
+            position: absolute;
+            content: '';
+            width:0;
+            border-top:20px solid blanchedalmond;
+            border-bottom:20px solid transparent;
+            border-left:20px solid transparent;
+            border-right:20px solid transparent;
+            bottom: -40px;
+        }
+        .item{
+            width: 50px;
+            height: 50px;
+            background-color: turquoise;
+        }
+        .open .itemBox{
+            opacity: 1;
+            top: -10px;
+        }
+        .open .button{
+            animation: animation 0.5s linear 0s 1;
+            transform: rotate(45deg);
+        }
+        @keyframes animation {
+            0%{
+                transform: rotate(0deg) scale(1);
+            }
+            60%{
+                transform: rotate(0deg) scale(0.8);
+            }
+            70%{
+                transform: rotate(35deg) scale(0.9);
+            }
+            90%{
+                
+                transform: rotate(40deg) scale(1.2);
+            }
+            100%{
+                transform: rotate(45deg) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id='button'>
+        <div class="button"></div>
+        <div class="itemBox">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+    </div>
+    <script>
+        let button = document.getElementById('button')
+        button.addEventListener('click',()=>{
+            button.classList.toggle('open')
+        })
+    </script>
+</body>
+</html>
